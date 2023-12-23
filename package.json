@@ -1,9 +1,10 @@
 {
   "name": "textutility",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://pranzal360.github.io/textutility",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,8 +21,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
-
-    
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

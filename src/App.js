@@ -9,7 +9,7 @@ import Alert from './components/Alert';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [mode,setmode] = useState('light')
+  const [mode,setmode] = useState('#353a3f')
   const [alert,setAlert] = useState(null)
   
   const showAlert = (message, type) => {
@@ -67,13 +67,14 @@ function App() {
     <Alert alert = {alert}/>
     <div className="container">
     {/* <About /> */}
+    {/* <TextForm alert={showAlert} heading="Enter text here" mode={mode} /> */}
 
     
 
       <Routes>
 
         {/* <Route path='Path You want to use' element={<What you want to render >}/>  */}
-        <Route exact path="/" element={<TextForm alert={showAlert} heading="Enter text here" mode={mode} />}> </Route>
+        <Route exact path="/*" element={<TextForm alert={showAlert} heading="Enter text here" mode={mode} />}> </Route>
         <Route path="/about" element={<About />}></Route>	
 
       </Routes>

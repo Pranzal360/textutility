@@ -33,15 +33,15 @@ export default function TextForm(props) {
         <h1>{props.heading}</h1>
         <label htmlFor="exampleformControlTextarea1" className="form-label">Example textarea </label>
         <textarea className="form-control" id="exampleformControlTextarea1" rows="8" value = {text} onChange={handle_on_change}></textarea>
-        <button className="btn btn-primary" onClick={handle_click}>Convert To Uppercase</button>
-        <button className="btn btn-primary mx-2 my-3" onClick={handle_Lower_click}>Convert To Lowercase</button>
-        <button className="btn btn-primary mx-2 my-3" onClick={copyToClip}>Copy to Clipboard</button>
-        <button className="btn btn-danger mx-2 my-3" onClick={clearText}>Clear</button>
+        <button className="btn btn-primary mx-2 my-2" disabled = {text.length === 0} onClick={handle_click}>Convert To Uppercase</button>
+        <button className="btn btn-primary mx-2 my-2" disabled = {text.length === 0} onClick={handle_Lower_click}>Convert To Lowercase</button>
+        <button className="btn btn-primary mx-2 my-2" disabled = {text.length === 0} onClick={copyToClip}>Copy to Clipboard</button>
+        <button className="btn btn-danger mx-2 my-2" disabled = {text.length === 0} onClick={clearText}>Clear</button>
         </div>
     </div>
     <div className="container">
       <h3>Summary</h3>
-      <p>{text.trim().length <= 0? "0" : text.split(" ").length } Words and {text.length} Characters</p>
+      <p>{text.trim().length <= 0? "0" : text.split(/\s+/).length } Words and {text.length} Characters</p>
       <p>{text.trim().length <= 0? "0" : 0.008 * text.split(" ").length} Minutes read </p>
       <h3>Preview</h3>
       <p>{text.length > 0 ?text : 'Enter in the text box above to preview it here !'}</p>
